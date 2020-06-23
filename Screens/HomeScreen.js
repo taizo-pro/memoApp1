@@ -7,9 +7,11 @@ import {
   Text,
   StatusBar,
   FlatList,
+  Button
 } from 'react-native';
 import {Header, Container} from 'native-base';
 import MainScreen from './MainScreen'
+import EditScreen from './EditScreen'
 import {Provider as PaperProvider} from 'react-native-paper';
 
 export default class HomeScreen extends React.Component {
@@ -23,10 +25,16 @@ export default class HomeScreen extends React.Component {
       <PaperProvider>
         <Container>
           <SafeAreaView>
-            <Header style={{backgroundColor: 'white'}}>
-              <Text>メモ帳</Text>
-            </Header>
             <MainScreen />
+            <Button 
+              title='登録画面へ'
+              onPress={() => this.props.navigation.navigate('EditScreen')}
+            /> 
+            <Button 
+              style={{}}
+              title='+'
+              onPress={() => this.props.navigation.navigate('EditScreen')}
+            /> 
           </SafeAreaView>
         </Container>
       </PaperProvider>
